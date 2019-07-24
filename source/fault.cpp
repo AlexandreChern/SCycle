@@ -101,6 +101,8 @@ PetscErrorCode Fault::loadSettings(const char *file)
     else if (var.compare("lockedDepths")==0) { loadVectorFromInputFile(rhsFull,_lockedDepths); }
   }
 
+
+    // comment: too many else if could hinder performance  
   #if VERBOSE > 1
     ierr = PetscPrintf(PETSC_COMM_WORLD,"Ending loadData in fault.cpp.\n");CHKERRQ(ierr);
   #endif
